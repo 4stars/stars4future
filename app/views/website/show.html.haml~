@@ -1,0 +1,5 @@
+=@website.link_name
+%br
+=@website.link_description
+%br
+=link_to "Back",websites_path
