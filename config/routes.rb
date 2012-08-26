@@ -1,5 +1,7 @@
 Stars4future::Application.routes.draw do
 
+  devise_for :users,:controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+	#devise_for :admins, :controllers => { :sessions => "admins/sessions" }
 	resources :website ,:as=>:websites
 	root :to =>  "website#index"
 

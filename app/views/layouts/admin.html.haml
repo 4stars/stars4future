@@ -1,0 +1,11 @@
+!!!
+%html
+  =render "layouts/head"
+  %body
+    - if admin_signed_in?
+			= current_admin.email
+
+    - else
+			= link_to "Sign In",admin_new_session_path
+			= yield
+

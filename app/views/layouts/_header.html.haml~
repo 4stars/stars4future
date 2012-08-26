@@ -2,3 +2,12 @@
 	%b stars4future
 	%br	
 	=link_to image_tag("stars4future.jpeg"),websites_url
+	%br	
+	%span
+	-if user_signed_in?
+		= current_user.email + "not you?"
+		=link_to "Sign Out",destroy_user_session_path,:method=> :delete
+		%br	
+	-else
+		= link_to "Sign In"
+

@@ -1,4 +1,6 @@
 class WebsiteController < ApplicationController
+	
+	before_filter :authenticate_user!
 
 	def index
 		@website = Website.all
@@ -25,6 +27,7 @@ class WebsiteController < ApplicationController
 	end
 	
 	def update
+		@website = Website.find(params[:id])
 		if @website.update_attributes(params[:website])
 			redirect_to website_path
 		else
